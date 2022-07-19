@@ -1,0 +1,28 @@
+header {
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  color: red;
+  text-align: left;
+  font-size: 70px;
+}
+
+.banner-text {
+  padding:  0, 30px;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+
+.banner-text span {
+  color: red;
+}
+
+.banner-text h2 {
+  font-size: 25px;
+  font-weight: 600;
+}

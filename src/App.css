@@ -1,0 +1,78 @@
+* {
+
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  text-align: center;
+  color: white;
+  font-size: 13px;
+}
+
+body {
+  background-image: url(/public/img/fondo.jpg);
+  align-items: center;
+}
+
+.App button {
+  background-color: rgba(235, 44, 44, 0.733);
+  border-color: rgba(255, 0, 0, 0.212);
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  padding: 2px;
+  
+  margin-left: 5px;
+}
+
+.App form {
+  width: 50%;
+  background-color: rgba(168, 14, 14, 0.658);
+  padding: 14px;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.App input {
+  width: 90%;
+  background: rgb(104, 9, 9);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid red;
+  font-size: 18px;
+  color: white;
+}
+
+.App input.button {
+  width: 150px;
+  background: rgb(205, 15, 15);
+  border: 1px solid rgb(170, 170, 170);
+  color: white;
+  margin: 20px 0;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+a.navbar-brand {
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, .55);
+  font-size: 22px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

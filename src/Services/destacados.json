@@ -1,0 +1,20 @@
+{
+    "Destacados":[
+        {
+            "marca":"Gibson",
+            "modelo":"Explorer"
+        },
+        {
+            "marca":"Gibson",
+            "modelo":"Les Paul"
+        },
+        {
+            "marca":"Gibson",
+            "modelo":"SG"
+        },
+        {
+            "marca":"Gibson",
+            "modelo":"Flying V"
+        }
+    ]
+}
