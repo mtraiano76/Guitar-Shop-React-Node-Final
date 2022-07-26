@@ -9,6 +9,7 @@ var pool = require("./models/bd");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/admin/login');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/admin/login",loginRouter);
 
 //select
  //pool.query("select * from empleados").then(function(resultados){
@@ -56,7 +58,7 @@ app.use('/users', usersRouter);
  //})
 
  //delete
-var id = 24;
+/*var id = 24;
 pool.query("delete from empleados where id_emp=?", [id]).then (function (resultados){
   console.log(resultados)
 })
@@ -76,6 +78,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+});*/
 
 module.exports = app;
