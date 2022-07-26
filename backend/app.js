@@ -5,11 +5,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require("dotenv").config();
-var pool = require("./models/bd");
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var homeRouter = require('./routes/home')
+var productosRouter = require('./routes/productos')
+var galeriaRouter = require('./routes/galeria')
+var novedadesRouter = require('./routes/novedades');
+var contactoRouter = require('./routes/contacto')
+var registroRouter = require('./routes/registro')
+var loginRouter = require('./routes/admin/login')
+
+//panel administrador
 var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
+
+const {
+  application
+} = require('express');
 
 var app = express();
 
@@ -19,58 +32,57 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'migyshe101723',
+  cookie: {MaxAge: null},
+  resave: false,
+  saveUninitialized: true,
+}))
+
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login')
+    }
+  } catch (error) {
+    console.log(error)
+
+  }
+}
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use("/admin/login",loginRouter);
+app.use('/home', homeRouter);
+app.use('/productos', productosRouter);
+app.use('/galeria', galeriaRouter);
+app.use('/novedades', novedadesRouter);
+app.use('/contacto', contactoRouter);
+app.use('/registro', registroRouter);
+app.use('/admin/login', loginRouter)
+app.use('/admin/novedades', secured, adminRouter)
 
-//select
- //pool.query("select * from empleados").then(function(resultados){
-  //console.log(resultados)
- //})
 
- //insert
- //var obj = {
-  //nombre: 'Juan',
-  //apellido: 'Hagan',
-  //trabajo: 'Programador Senior',
-  //edad: 32,
-  //salario: 120000,
-  //mail: 'juan_hagan@bignet.com'
- //}
+//panel adminsitrador
+app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', secured, adminRouter);
 
- //pool.query("insert into empleados set ?", [obj]).then(function (resultados){
-  //console.log(resultados)
- //});
-
- //update
- //var id = 24;
- //var obj = {
-  //nombre: "Miguel",
-  //apellido: "Traiano"
- //}
-
- //pool.query("update empleados set? where id_emp=?",[obj,id]).then(function (resultados){
-  //console.log(resultados)
- //})
-
- //delete
-/*var id = 24;
-pool.query("delete from empleados where id_emp=?", [id]).then (function (resultados){
-  console.log(resultados)
-})
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -78,6 +90,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});*/
+});
 
 module.exports = app;
