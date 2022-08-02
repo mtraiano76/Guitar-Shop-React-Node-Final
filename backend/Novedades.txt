@@ -1,0 +1,5 @@
+La idea para implementar la tabla dinamica en mi sitio, es tener la seccion NOVEDADES en donde se puedan ingresar los productos nuevos
+y/o nuevas incorporaciones con una breve descripcion del mismo.
+Pudiendo tener la Marca / el Modelo / la descripcion / una foto e ir rotando esta seccion conforme a nuevos ingresos.
+En la misma seccion tener el buscador para limitar dicha busqueda por marca, modelo, etc-
+
