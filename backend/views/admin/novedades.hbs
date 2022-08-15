@@ -27,9 +27,10 @@
             <table class="table">
                 <thead>
                     <tr class="table-dark">
-                        <th scope="col"></th>
+                        <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col" class="text-end">Acciones</th>
+                        <th scope="col">Imagen</th>
+                        <th class="text-end">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,7 @@
                         {{!-- comentario --}}
                         <th scope="row">{{id}}</th>
                         <td>{{titulo}}</td>
+                        <td>{{{imagen}}}</td>
                         <td class="text-end">
                             <a href="/admin/novedades/modificar/{{id}}"class='btn btn-secondary'><i class="fa-solid fa-pencil"></i></a>
                             <a href="/admin/novedades/eliminar/{{id}}" class='btn btn-secondary'><i class="fa-solid fa-trash"></i></a>{{!-- vamos a novedadesModel --}}

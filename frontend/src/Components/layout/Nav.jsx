@@ -16,6 +16,7 @@ function Menu(props) {
 
                     <Nav.Link as={Link} to="/galeria">Galeria</Nav.Link>
                     <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
+                    <Nav.Link as={Link} to="/novedades">Novedades</Nav.Link>
                     <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
                     <Nav.Link as={Link} to="/registro">Registro</Nav.Link>
                     

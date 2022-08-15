@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <h2>Agregar una nueva novedad</h2>
-            <form action="/admin/novedades/agregar" method="post">
+            <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">Titulo</label> 
                     <input type="text" class="form-control"
@@ -11,6 +11,9 @@
                 <div class="mb-3">
                      <label class="form-label">Subtitulo</label> 
                     <textarea class="form-control" rows="3" name="subtitulo"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen" /></label>
                 </div>
                 <div class="mb-3">
                      <label class="form-label">Cuerpo</label> 

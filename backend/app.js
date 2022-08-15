@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fileUpload = require('express-fileupload');
+var cors = require('cors');
 
 require("dotenv").config();
 var session = require('express-session');
@@ -15,6 +17,7 @@ var novedadesRouter = require('./routes/novedades');
 var contactoRouter = require('./routes/contacto')
 var registroRouter = require('./routes/registro')
 var loginRouter = require('./routes/admin/login')
+var apiRouter = require('./routes/api');
 
 //panel administrador
 var loginRouter = require('./routes/admin/login');
@@ -55,9 +58,13 @@ secured = async (req, res, next) => {
     }
   } catch (error) {
     console.log(error)
-
   }
 }
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tenpFileDir: '/tmp/'
+}))
 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
@@ -68,6 +75,7 @@ app.use('/contacto', contactoRouter);
 app.use('/registro', registroRouter);
 app.use('/admin/login', loginRouter)
 app.use('/admin/novedades', secured, adminRouter)
+app.use('/api', cors(), apiRouter)
 
 
 //panel adminsitrador
