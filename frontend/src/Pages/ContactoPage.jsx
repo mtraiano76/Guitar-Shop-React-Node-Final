@@ -42,20 +42,20 @@ const ContactoPage = (props) => {
                 <h2>Contacto Rapido</h2>
                 <form action="/contacto" method="post" onSubmit={handleSubmit} className="formulario">
                     <p>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" value={formData.nombre} onChange={handleChange}/>
+                        <label for="nombre"></label>
+                        <input type="text" placeholder="Nombre y Apellido" name="nombre" value={formData.nombre} onChange={handleChange}/>
                     </p>
                     <p>
-                        <label for="email">Email</label>
-                        <input type="text" name="email" value={formData.email} onChange={handleChange}/>
+                        <label for="email"></label>
+                        <input type="text" placeholder="Email" name="email" value={formData.email} onChange={handleChange}/>
                     </p>
                     <p>
-                        <label for="telefono">Telefono</label>
-                        <input type="text" name="telefono" value={formData.telefono} onChange={handleChange}/>
+                        <label for="telefono"></label>
+                        <input type="text" placeholder="Telefono" name="telefono" value={formData.telefono} onChange={handleChange}/>
                     </p>
                     <p>
-                        <label for="mensaje">Mensaje</label>
-                        <textarea name="mensaje" value={formData.mensaje} onChange={handleChange}></textarea>
+                        <label for="mensaje"></label>
+                        <textarea placeholder="Ingrese su mensaje" name="mensaje" value={formData.mensaje} onChange={handleChange}></textarea>
                     </p>
                     <p className="acciones"><input type="submit" value="Enviar" /></p>
                 

@@ -76,3 +76,6 @@ p {
   font-weight: bold;
   color: white;
 }
+.App textarea{
+  width: 90%;
+}
